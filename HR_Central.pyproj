@@ -1,0 +1,171 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>243c74e4-69a9-43a6-847a-6090df64be90</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>runserver.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Web launcher</LaunchProvider>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+    <Name>HR_Central</Name>
+    <RootNamespace>HR_Central</RootNamespace>
+    <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
+    <SuppressConfigureTestFrameworkPrompt>true</SuppressConfigureTestFrameworkPrompt>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
+    <WebBrowserPort>4000</WebBrowserPort>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="HR_Central_App\" />
+    <Folder Include="HR_Central_App\flask_app\" />
+    <Folder Include="HR_Central_App\react_app\" />
+    <Folder Include="HR_Central_App\react_app\components\" />
+    <Folder Include="HR_Central_App\react_app\components\datatables\" />
+    <Folder Include="HR_Central_App\react_app\components\apis\" />
+    <Folder Include="HR_Central_App\react_app\components\views\" />
+    <Folder Include="HR_Central_App\react_app\components\chart\" />
+    <Folder Include="HR_Central_App\react_app\components\utils\" />
+    <Folder Include="HR_Central_App\react_app\components\views\modals\" />
+    <Folder Include="HR_Central_App\react_app\components\views\stepper\" />
+    <Folder Include="HR_Central_App\react_app\dist\" />
+    <Folder Include="HR_Central_App\react_app\dist\bundles\" />
+    <Folder Include="HR_Central_App\react_app\dist\css\" />
+    <Folder Include="HR_Central_App\react_app\dist\css\chart\" />
+    <Folder Include="HR_Central_App\react_app\dist\images\" />
+    <Folder Include="HR_Central_App\react_app\dist\scss\" />
+    <Folder Include="HR_Central_App\react_app\html\" />
+    <Folder Include="HR_Central_App\react_app\public\" />
+    <Folder Include="HR_Central_App\react_app\public\assets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="config.py" />
+    <Compile Include="HR_Central_App\flask_app\apiCalls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HR_Central_App\flask_app\database_model.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HR_Central_App\flask_app\email_config.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HR_Central_App\flask_app\send_email_to_hr.py" />
+    <Compile Include="HR_Central_App\flask_app\send_email_test.py" />
+    <Compile Include="HR_Central_App\flask_app\views.py" />
+    <Compile Include="HR_Central_App\flask_app\__init__.py" />
+    <Compile Include="HR_Central_App\__init__.py" />
+    <Compile Include="runserver.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HR_Central_App\react_app\components\apis\hr-api-calls.js" />
+    <Content Include="HR_Central_App\react_app\components\apis\main-api-calls.js" />
+    <Content Include="HR_Central_App\react_app\components\apis\user-api-calls.js" />
+    <Content Include="HR_Central_App\react_app\components\App.js" />
+    <Content Include="HR_Central_App\react_app\components\chart\waterfallChart.js" />
+    <Content Include="HR_Central_App\react_app\components\chart\pieofpieChart.js" />
+    <Content Include="HR_Central_App\react_app\components\chart\areaChart.js" />
+    <Content Include="HR_Central_App\react_app\components\datatables\hr-recruiter-datatable.js" />
+    <Content Include="HR_Central_App\react_app\components\datatables\hr-datatable.js" />
+    <Content Include="HR_Central_App\react_app\components\datatables\manager-datatable-add-new.js" />
+    <Content Include="HR_Central_App\react_app\components\datatables\recruiter-datatable.js" />
+    <Content Include="HR_Central_App\react_app\components\datatables\user-datatable.js" />
+    <Content Include="HR_Central_App\react_app\components\datatables\manager-datatable.js" />
+    <Content Include="HR_Central_App\react_app\components\apis\manager-api-calls.js" />
+    <Content Include="HR_Central_App\react_app\components\dashboard.js" />
+    <Content Include="HR_Central_App\react_app\components\login.js" />
+    <Content Include="HR_Central_App\react_app\components\utils\data_table_columns.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="HR_Central_App\react_app\components\utils\alertSnackBar.js" />
+    <Content Include="HR_Central_App\react_app\components\views\hr-central-tile.js" />
+    <Content Include="HR_Central_App\react_app\components\views\hr-recruiter-dashboard.js" />
+    <Content Include="HR_Central_App\react_app\components\views\recruiter-dashboard.js" />
+    <Content Include="HR_Central_App\react_app\components\views\manager-dashboard.js" />
+    <Content Include="HR_Central_App\react_app\components\views\modals\manager-add-modal.js" />
+    <Content Include="HR_Central_App\react_app\components\views\modals\user-details-modal.js" />
+    <Content Include="HR_Central_App\react_app\components\views\modals\user-add-modal.js" />
+    <Content Include="HR_Central_App\react_app\components\views\stepper\recruiter-stepper.js" />
+    <Content Include="HR_Central_App\react_app\components\views\stepper\user-stepper.js" />
+    <Content Include="HR_Central_App\react_app\components\views\user-dashboard.js" />
+    <Content Include="HR_Central_App\react_app\components\views\hr-dashboard.js" />
+    <Content Include="HR_Central_App\react_app\components\home.js" />
+    <Content Include="HR_Central_App\react_app\components\index.js" />
+    <Content Include="HR_Central_App\react_app\components\utils\busyIndicator.js" />
+    <Content Include="HR_Central_App\react_app\components\utils\ScrollToTop.js" />
+    <Content Include="HR_Central_App\react_app\dist\bundles\bundle.js" />
+    <Content Include="HR_Central_App\react_app\dist\bundles\vendor.bundle.js" />
+    <Content Include="HR_Central_App\react_app\dist\css\chart\custom.css" />
+    <Content Include="HR_Central_App\react_app\dist\images\16317.png" />
+    <Content Include="HR_Central_App\react_app\dist\images\17223.png" />
+    <Content Include="HR_Central_App\react_app\dist\images\bonus.jpg" />
+    <Content Include="HR_Central_App\react_app\dist\images\favicon.ico" />
+    <Content Include="HR_Central_App\react_app\dist\images\allowance.jpg" />
+    <Content Include="HR_Central_App\react_app\dist\images\hr.png" />
+    <Content Include="HR_Central_App\react_app\dist\images\kpmg-logo.png" />
+    <Content Include="HR_Central_App\react_app\dist\images\people.jpg" />
+    <Content Include="HR_Central_App\react_app\dist\scss\App.scss" />
+    <Content Include="HR_Central_App\react_app\html\hrrecruiter.html" />
+    <Content Include="HR_Central_App\react_app\html\hrview.html" />
+    <Content Include="HR_Central_App\react_app\html\login.html" />
+    <Content Include="HR_Central_App\react_app\html\index.html" />
+    <Content Include="HR_Central_App\react_app\html\layout.html" />
+    <Content Include="HR_Central_App\react_app\package.json" />
+    <Content Include="HR_Central_App\react_app\prod-webpack.config.js" />
+    <Content Include="HR_Central_App\react_app\webpack.config.js" />
+    <Content Include="Procfile" />
+    <Content Include="requirements.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
