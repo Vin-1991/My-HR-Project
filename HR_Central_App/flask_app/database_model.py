@@ -142,7 +142,7 @@ class SPGetFactEmployeeShiftAllowanceAndSummarySchema(marsh_mallow.Schema):
                   ,'ManagerEmailId'
                   ,'ManagerName'
                   ,'HrEmailId'
-                  ,'Hrname'
+                  ,'HrName'
                   ,'ShiftMonth'
                   ,'ShiftYear'
                   ,'ShiftType'

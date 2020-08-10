@@ -27,7 +27,7 @@ const QontoConnector = withStyles({
     },
     completed: {
         '& $line': {
-            borderColor: '#00c72e',
+            borderColor: '#784af4',
         },
     },
     line: {

@@ -157,8 +157,8 @@ def saveNewShiftAllowance():
    
     jsonEmpData = dbModel.insert_new_shift_allowance_summary_schema.dump(emp_list)
     cursor.close()
-    trigger_email_process(employee_email_id,manager_email_id,hr_email_id,shift_month,shift_year,shift_type_id,
-                                no_of_days,total_amount,status_id,rejection_comments)
+    #trigger_email_process(employee_email_id,manager_email_id,hr_email_id,shift_month,shift_year,shift_type_id,
+    #                            no_of_days,total_amount,status_id,rejection_comments)
     return str(jsonEmpData)
 
 @app.route('/api/getShiftAllowanceAndSummary/',methods=['POST'])
@@ -437,8 +437,8 @@ def saveNewJoineeExpenseInfo():
    
     jsonInfoData = dbModel.sp_insert_update_new_joinee_expense_info_schema.dump(info_list)
     cursor.close()
-    trigger_email_process_recruiter(recruiter_email_id,hr_email_id,emp_id,emp_name,doj,cost_center_id,head_id,
-                                clawblack_duration,total_expense,expense_status_id,created_by)
+    #trigger_email_process_recruiter(recruiter_email_id,hr_email_id,emp_id,emp_name,doj,cost_center_id,head_id,
+    #                            clawblack_duration,total_expense,expense_status_id,created_by)
     return str(jsonInfoData)
 
 
@@ -589,3 +589,17 @@ def prepare_and_send_email_recruiter(emailData,statusId):
     print(response.status_code)
     print(response.body)
     print(response.headers)
+
+
+
+@app.route('/api/fileUpload/', methods=['POST'])
+def fileUpload():
+    target = 'C:/Users/vinayaggarwal/source/repos/HR_Central/HR_Central_App/csvfiles'
+    file = request.files['PDFFile']
+    print(file)
+    filename = file.filename
+    destination = "/".join([target, filename])
+    file.save(destination)
+    #session['uploadFilePath'] = destination
+    response = "uploaded successfully!"
+    return response

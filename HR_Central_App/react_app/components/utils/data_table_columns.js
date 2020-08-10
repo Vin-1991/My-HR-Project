@@ -24,7 +24,7 @@ export const UserColumns = [
         }
     },
     {
-        name: "Hrname",
+        name: "HrName",
         label: "HR Name",
         options: {
             filter: false,
@@ -453,7 +453,7 @@ export const ManagerColumns = [
         }
     },
     {
-        name: "Hrname",
+        name: "HrName",
         label: "HR Name",
         options: {
             filter: false,

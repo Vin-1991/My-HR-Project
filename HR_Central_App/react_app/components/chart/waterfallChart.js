@@ -20,18 +20,18 @@ export default function WaterfallChart({ dashboardId }) {
         // using math in the data instead of final values just to illustrate the idea of Waterfall chart
         // a separate data field for step series is added because we don't need last step (notice, the last data item doesn't have stepValue)
         chart.data = [{
-            category: "Allowance Raised",
+            category: "Raised",
             value: 8000,
             open: 0,
             stepValue: 8000,
-            color: '#60c483',
+            color: '#31b3e0',
             displayValue: 8000
         }, {
             category: "Approved",
             value: 8000 - 5000,
             open: 8000,
             stepValue: 8000 - 5000,
-            color: '#31b3e0',
+            color: '#60c483',
             displayValue: 5000
         }, {
             category: "Rejected",
@@ -88,6 +88,7 @@ export default function WaterfallChart({ dashboardId }) {
 
         chart.cursor = new am4charts.XYCursor();
         chart.cursor.behavior = "none";
+        chart.exporting.menu = new am4core.ExportMenu();
     }
 
     useEffect(() => {

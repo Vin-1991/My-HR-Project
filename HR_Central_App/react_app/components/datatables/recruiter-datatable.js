@@ -28,6 +28,8 @@ import {
 } from '@material-ui/pickers';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
+import Input from '@material-ui/core/Input';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -205,6 +207,7 @@ export default function RecruiterDatatable() {
                 })
             ]);
             if (response.status === 200) {
+                onFileUpload();
                 handleClose();
                 getAllExpenseInfoHR();
                 getCurrentStatus();
@@ -292,6 +295,43 @@ export default function RecruiterDatatable() {
             );
         }
     };
+
+    const [uploadedFile, setUploadedFile] = useState(null);
+
+    const onFileChange = (e) => {
+        setUploadedFile(e.target.files[0])
+    }
+
+    const onFileUpload = () => {
+
+        // Create an object of formData 
+        const formData = new FormData();
+
+        // Update the formData object 
+        formData.append(
+            "PDFFile",
+            uploadedFile,
+            uploadedFile.name
+        );
+
+        // Details of the uploaded file 
+        console.log(uploadedFile);
+        uploadPDFFile(formData)
+
+    };
+
+    const uploadPDFFile = async (formData) => {
+        try {
+            const [response] = await Promise.all([
+                axios.post('/api/fileUpload/', formData)
+            ]);
+            response.data;
+        } catch (err) {
+            console.log(err);
+        }
+
+    };
+
 
     return (
         <Fragment>
@@ -388,12 +428,14 @@ export default function RecruiterDatatable() {
                             inputComponent: NumberFormatCustom,
                         }}
                     />
+                    <input id="my-input" type="file" onChange={onFileChange} placeholder="Please Choose a file" />
+
                     {getExpenseAmount.length > 6 && <h5 style={{ color: 'red' }}>Please input amount less than 10,00,000</h5>}
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={saveNewJoineeExpenseInfo} variant="contained" color="primary"
                         disabled={getEmployeeId === '' || getEmployeeName === '' || getSelectedCostCenter === '' || getSelectedClawbackDuration === ''
-                            || getSelectedHead === '' || getExpenseAmount === '' || getExpenseAmount.length > 6}>
+                            || uploadedFile === null || getSelectedHead === '' || getExpenseAmount === '' || getExpenseAmount.length > 6}>
                         Submit
                     </Button>
                     <Button onClick={handleClose} variant="outlined" color="secondary">

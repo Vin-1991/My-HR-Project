@@ -80,7 +80,7 @@ export default function PieChart({ dashboardId }) {
         let interfaceColors = new am4core.InterfaceColorSet();
 
         var colorSet = new am4core.ColorSet();
-        colorSet.list = ["#0091DA", "#483698", "#470A68", "#6D2077", "#00A3A1"].map(function (color) {
+        colorSet.list = ["#0091DA", "#483698", "#470A68", "#00338D", "#6D2077", "#00A3A1"].map(function (color) {
             return new am4core.color(color);
         });
         pieSeries.colors = colorSet;
@@ -160,7 +160,7 @@ export default function PieChart({ dashboardId }) {
             }, 1000);
         });
 
-
+        chart.exporting.menu = new am4core.ExportMenu();
     }
 
     useEffect(() => {
